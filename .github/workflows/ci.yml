@@ -20,4 +20,4 @@ jobs:
           go-verssion: "1.25.1"
 
       - name: Force Failure
-        run: (exit 1)
+        run: (go version)
