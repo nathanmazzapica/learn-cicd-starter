@@ -1,17 +1,17 @@
 package auth
 
 import (
-	"testing"
 	"net/http"
+	"testing"
 )
 
 func TestGetApiKey(t *testing.T) {
 	tests := []struct {
-		name string
-		input http.Header
-		want string
+		name    string
+		input   http.Header
+		want    string
 		wantErr error
-		setup func(*http.Header)
+		setup   func(*http.Header)
 	}{
 		{name: "empty auth", input: http.Header{}, want: "", wantErr: ErrNoAuthHeaderIncluded},
 		{name: "malformed", input: http.Header{}, want: "", wantErr: ErrMalformedAuthHeader, setup: func(h *http.Header) { h.Add("Authorization", "apple") }},
