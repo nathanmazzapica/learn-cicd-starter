@@ -14,10 +14,10 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
 
-      - name: Ste up Go
+      - name: Set up Go
         uses: actions/setup-go@v5
         with:
           go-verssion: "1.25.1"
 
-      - name: Force Failure
+      - name: Run Unit Tests
         run: (go test -cover ./...)
